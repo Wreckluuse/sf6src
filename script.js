@@ -170,8 +170,8 @@ $(function () {
     updateCurrentMove(currentMove, $(e.target), hitType_1, hitType_2);
   });
 
-  settingsButtons.on("click", (e) => {
-    $(e.target).next().toggleClass("settings-open");
-    $(e.target).children().toggleClass("rotate");
-  });
+  // settingsButtons.on("click", (e) => {
+    // $(e.target).next().toggleClass("settings-open");
+    // $(e.target).children().toggleClass("rotate");
+  // });
 });

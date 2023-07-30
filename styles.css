@@ -8,7 +8,7 @@ Snow: #FFF9FB
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
-body {
+body, html {
     background-color: #FFF9fB;
     position: fixed;
     top: 0;
@@ -18,77 +18,77 @@ body {
 }
 
 #content-wrapper {
-    display: grid;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 25% 25% 25% 25%;
+    justify-content: space-between;
+    gap: 10%;
 }
 
 #logo {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0;
+    flex-direction: column;
     font-family: 'Permanent Marker', cursive;
     position: fixed;
-    top: 0;
-    left: 5%;
-    height: 100px;
-    width: 100px;
+    left: 4vh;
 }
 
 #logo-content-1 {
     color: #5498b6;
-    position: fixed;
-    top: 1%;
-    left: 1%;
+    /* position: fixed; */
+    /* top: -2vh; */
+    /* left: 1vw; */
 }
 
 #logo-content-2 {
     color: #ca394c;
-    position: fixed;
-    top: 3%;
-    left: 3%;
+    /* position: fixed; */
+    /* top: 1vh; */
+    /* left: 1vw; */
 }
 
 #logo-content-3 {
     color: #252627;
-    position: fixed;
-    top: 5%;
-    left: 4%;
+    /* position: fixed; */
+    /* top:  4%; */
+    /* left: 1%; */
 }
 
 #frame-calculator {
     font-family: 'Rubik', sans-serif;
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 4;
-    background-color: #D3D4D9;
-    border-radius: 5px;
-    box-shadow: 2px 4px 1px #797979;
     display: flex;
-    flex-direction: row;
+    order: 2;
     gap: 100px;
     justify-content: center;
     align-items: center;
+    align-self: center;
     padding-bottom: 2%;
+    width: 80%;
+    height: 50%;
+    margin-right: 2%;
 }
 
 .move-container {
-    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10%;
+    height: 100%;
     width: 40%;
     text-align: center;
     place-content: center;
-    vertical-align: top;
 }
 
 .move-image-container {
     display: grid;
-    background-color: #949496;
-    height: 80%;
     width: 100%;
-    border-radius: 5px;
-    box-shadow: inset 2px 2px 2px 2px #7a7a7b;
-    align-items: center;
     justify-content: center;
+    align-self: center;
 }
 
 .move-image-container img {
@@ -105,43 +105,24 @@ body {
 }
 
 .settings {
-    display: flex;
-    background-color: #949496;
-    grid-row-start: 2;
-    grid-row-end: 4;
-    height: 80%;
+    height: 100%;
     width: fit-content;
     font-family: 'Rubik', sans-serif;
+    justify-self: center;
+    background-color:#888888;
+    box-shadow: 2px 0 0 0 #252627;
 }
 
 #settings-1 {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    justify-self: end;
+    order: 1;
     align-self: center;
-    box-shadow: 0px 2px 0px 0px #797979;
+    /* border-right: #252627 2px solid; */
+    padding-right: 3%;
 }
 
 #settings-2 {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    justify-self: start;
     align-self: center;
-    box-shadow: 2px 2px 1px 1px #797979;
-}
-
-.settings-button {
-    display: flex;
-    width: 25px;
-    height:100%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+    order: 3;
 }
 
 .settings-form {
@@ -150,38 +131,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10%;
-    opacity: 0;
-    width: 0;
-    height: 100%;
-    flex-grow: 1;
-    transition: width 0.5s ease-in-out 0.75s, opacity 0.5s ease-in-out 0.5s;
-}
-
-.settings-open {
+    gap: 7%;
     opacity: 1;
     width: 150px;
-    transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out 0.5s;
-}
-
-.button-rotator {
-    pointer-events: none;
-    transition: transform 0.5s;
-}
-
-.rotate {
-    transform: rotate(180deg);
-    transition: transform 0.5s;
-}
-
-#settings-button-1, #settings-form-2 {
-  order: 1;
-  border-right: #D3D4D9 solid 2px;
-}
-
-#settings-button-2, #settings-form-1 {
-    order: 2;
-    border-left: #D3D4D9 solid 2px;
+    height: 80%;
+    margin-top: 50%;
+    flex-grow: 1;
+    transition: width 0.5s ease-in-out 0.75s, opacity 0.5s ease-in-out 0.5s;
 }
 
 .character-select {
@@ -194,7 +150,6 @@ body {
     justify-content: space-around;
     height: 50%;
 }
-
 
 .radio-group-item {
     border-radius: 4px;
@@ -214,4 +169,8 @@ body {
 
 input[type=radio] {
     visibility: hidden;
+}
+
+h4 {
+    border-bottom: #686868 2px solid;
 }

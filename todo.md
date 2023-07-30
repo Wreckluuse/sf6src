@@ -8,3 +8,7 @@ create the documentation page
 
 find a way to update database
 
+push to finish sf6 when possible.
+sunday big react push
+monday morning last touches on both, begin docs
+wednesday morning, finish videos and documentation
