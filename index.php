@@ -1,15 +1,3 @@
-<?php
-    $server = 'localhost';
-    $db = 'street fighter 6 framedata test';
-    $user = 'root';
-    $password = '';
-    try {
-            $conn = new PDO("mysql:host=$server;dbname=$db", $user, $password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch(PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
-        }
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,27 +8,117 @@
     </head>
     <body>
         <div id="content-wrapper">
-            <div id="logo"><h1 id="logo-content-1">SF6</h1><h1 id="logo-content-2">Hit</h1><h1 id="logo-content-3">Calculator</h1></div>
+            <div id="logo"><h1 id="logo-content-1">SF6</h1><h1 id="logo-content-2">Punish</h1><h1 id="logo-content-3">Calculator</h1></div>
             <div id="frame-calculator">
                 <div class="move-container">
-                    <h3>Move 1</h3>
-                    <div class="move-image">
-
+                    <h3 id="move-header-1"></h3>
+                    <div class="move-image-container">
+                        <img class="move-image" id="move-image-1"/>
                     </div>
+                    <h3 id="move-frames-1"></h3>
                 </div>
                 <div class="move-container">
-                    <h3>Move 2</h3>
-                    <div class="move-image">
-
+                    <h3 id="move-header-2"></h3>
+                    <div class="move-image-container">
+                        <img class="move-image" id="move-image-2"/>
+                    </div>
+                    <h3 id="move-frames-2"></h3>
+                </div>
+            </div>
+        <div class="settings" id="settings-1">
+            <div class="settings-button" id="settings-button-1"><span class="button-rotator"><i class="fa-solid fa-chevron-left"></i></span></div>
+                <div class="settings-form" id="settings-form-1">
+                    <select class="character-select" id="character-1">
+                        <option>Choose a character</option>
+                        <option value="Blanka">Blanka</option>
+                        <option value="Cammy">Cammy</option>
+                        <option value="Chun-Li">Chun-Li</option>
+                        <option value="Dee_Jay">Dee Jay</option>
+                        <option value="Dhalsim">Dhalsim</option>
+                        <option value="E.Honda">E. Honda</option>
+                        <option value="Guile">Guile</option>
+                        <option value="Jamie">Jamie</option>
+                        <option value="JP">JP</option>
+                        <option value="Juri">Juri</option>
+                        <option value="Ken">Ken</option>
+                        <option value="Kimberly">Kimberly</option>
+                        <option value="Lily">Lily</option>
+                        <option value="Luke">Luke</option>
+                        <option value="Manon">Manon</option>
+                        <option value="Marisa">Marisa</option>
+                        <option value="Ryu">Ryu</option>
+                        <option value="Zangief">Zangief</option>
+                    </select>
+                    <select class="move-select" id="move-select-1">
+                    </select>
+                    <div class="radio-container" id="radio-container-1">
+                        <h4>Hit type</h4>
+                        <div class="radio-group-item">
+                            <label for="normal-hit-1">Normal</label>
+                            <input type="radio" id="normal-hit-1" name="hit-type-1" value="normal"> 
+                        </div>
+                        <div class="radio-group-item">
+                            <label for="counter-hit-1">Counter</label>
+                            <input type="radio" id="counter-hit-1" name="hit-type-1" value="counter">
+                        </div>
+                        <div class="radio-group-item">
+                            <label for="punish-counter-1">Punish Counter</label>
+                            <input type="radio" id="punish-counter-1" name="hit-type-1" value="punish-counter">
+                        </div>
+                        <div class="radio-group-item">
+                            <label for="block-1">Block</label>
+                            <input type="radio" id="block-1" name="hit-type-1" value="blocked">
+                        </div>
+                        </div>
+</div>
+        </div>
+        <div class="settings" id="settings-2">
+            <div class="settings-button" id="settings-button-2"><span class="button-rotator"><i class="fa-solid fa-chevron-right"></i></span></div>
+                <div class="settings-form" id="settings-form-2">
+                    <select class="character-select" id="character-2">
+                        <option>Choose a character</option>
+                        <option value="Blanka">Blanka</option>
+                        <option value="Cammy">Cammy</option>
+                        <option value="Chun-Li">Chun-Li</option>
+                        <option value="Dee_Jay">Dee Jay</option>
+                        <option value="Dhalsim">Dhalsim</option>
+                        <option value="E.Honda">E. Honda</option>
+                        <option value="Guile">Guile</option>
+                        <option value="Jamie">Jamie</option>
+                        <option value="JP">JP</option>
+                        <option value="Juri">Juri</option>
+                        <option value="Ken">Ken</option>
+                        <option value="Kimberly">Kimberly</option>
+                        <option value="Lily">Lily</option>
+                        <option value="Luke">Luke</option>
+                        <option value="Manon">Manon</option>
+                        <option value="Marisa">Marisa</option>
+                        <option value="Ryu">Ryu</option>
+                        <option value="Zangief">Zangief</option>
+                    </select>
+                    <select class="move-select" id="move-select-2">
+                    </select>
+                    <div class="radio-container" id="radio-container-2">
+                        <h4>Hit type</h4>
+                        <div class="radio-group-item">
+                            <label for="normal-hit-2">Normal</label>
+                            <input checked="checked" type="radio" id="normal-hit-2" name="hit-type-2" value="normal"> 
+                        </div>
+                        <div class="radio-group-item">
+                            <label for="counter-hit-2">Counter</label>
+                            <input type="radio" id="counter-hit-2" name="hit-type-2" value="counter">
+                        </div>
+                        <div class="radio-group-item">
+                            <label for="punish-counter-2">Punish Counter</label>
+                            <input type="radio" id="punish-counter-2" name="hit-type-2" value="punish-counter">
+                        </div>
+                        <div class="radio-group-item">
+                            <label for="block-2">Block</label>
+                            <input type="radio" id="block-2" name="hit-type-2" value="blocked">
+                        </div>
                     </div>
                 </div>
-            </div> 
-            <div class="drawer-handle" id="handle-1">
-                <i class="fa-solid fa-chevron-left"></i>
-            </div> 
-            <div class="drawer-handle" id="handle-2">
-                <i class="fa-solid fa-chevron-right"></i>
-            </div>
+        </div>
         </div>
     </body>
 </html>
